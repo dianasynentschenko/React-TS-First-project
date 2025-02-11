@@ -4,7 +4,8 @@ export default function App()
 {
   return (
   <main>
-    <Goal/>
+    <Goal title="Some Title" descriptin="Some Description"/>
+    <Goal title="Another Title" descriptin="Another Description"/>
   </main>
   );
 }

@@ -1,10 +1,16 @@
-export default function Goal()
+type GoalProps =
 {
-    return(
-        <article>
+  title: string; 
+  descriptin: string;
+};
+
+export default function Goal({title, descriptin}: GoalProps)
+{
+    return(              
+        <article>          
         <div>
-          <h2>TITLE</h2>
-          <p>DESCRIPTION</p>
+          <h2>{title}</h2>
+          <p>{descriptin}</p>
         </div>
         <button>Delete</button>
       </article>
