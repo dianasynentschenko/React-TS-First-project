@@ -1,5 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+/* Статус задачи */
+.status {
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* Цвета для статуса */
+.status-pending {
+  background-color: #f9a73b;
+  color: #3a4346;
+}
+
+.status-completed {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.status-in-progress {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Цвета для приоритетов */
+.priority {
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.priority-low {
+  background-color: #8BC34A;
+  color: #3a4346;
+}
+
+.priority-medium {
+  background-color: #FFC107;
+  color: #3a4346;
+}
+
+.priority-high {
+  background-color: #F44336;
+  color: white;
+}
+
+
 * {
   box-sizing: border-box;
 }
