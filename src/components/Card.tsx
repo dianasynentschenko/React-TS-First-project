@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 export enum CardPriority {
-  Low = "Low",
-  Medium = "Medium",
-  High = "High",
+  Low = 1,
+  Medium = 2,
+  High = 3,
 }
 
 type CardProps = {
@@ -11,6 +11,7 @@ type CardProps = {
   description: string;
   status: boolean;
   priority: CardPriority;
+  onComplete: () => void;
 };
 
 export default function Card({
@@ -18,6 +19,7 @@ export default function Card({
   description,
   status,
   priority,
+  onComplete
 }: CardProps) {
   const [completed, setCompleted] = useState(status);
 
@@ -38,12 +40,15 @@ export default function Card({
             {completed ? "Completed" : "Pending"}
           </span>
           <span className={`text-sm font-semibold ${priorityColor[priority]}`}>
-            {priority}
+            {priority === CardPriority.High ? "High" : priority === CardPriority.Medium ? "Medium" : "Low"}
           </span>
         </div>
 
         <button
-          onClick={() => setCompleted(true)}
+          onClick={() => {
+            setCompleted(true);
+            onComplete();
+          }}
           disabled={completed}
           className={`mt-4 px-4 py-2 rounded-md font-bold transition ${
             completed
