@@ -6,6 +6,14 @@ export enum CardPriority {
   High = 3,
 }
 
+export type CardType = {
+  id: number;
+  title: string;
+  description: string;
+  status: boolean;
+  priority: CardPriority;
+};
+
 type CardProps = {
   title: string;
   description: string;
