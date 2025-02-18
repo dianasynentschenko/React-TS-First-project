@@ -1,6 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 
+textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  resize: vertical; /* Позволяет менять высоту */
+  transition: all 0.3s ease-in-out;
+}
+
+
+textarea:hover {
+  border-color: #007bff;
+}
+
+
+textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
 .container {
   max-width: 600px;
   margin: auto;
@@ -72,27 +98,68 @@ button:active {
 
 
 .card-list {
-  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 10px;
 }
 
 
 .card {
-  width: 270px;
+  min-width: 550px;
+  max-height: auto; 
+  min-height: 150px; 
   background: #3a3f4b;
   color: white;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
+  
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+
+.card-description {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  transition: max-height 0.3s ease-in-out;
+}
+
+
+.card-description.expanded {
+  -webkit-line-clamp: unset;
+  max-height: none;
+}
+
+
+.read-more {
+  color: #007bff;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 5px 0;
+  align-self: flex-start; 
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto; 
 }
 
 
@@ -139,19 +206,12 @@ button:active {
   color: white;
 }
 
-
 @media (max-width: 600px) {
-  input, select, button {
-      font-size: 14px;
-      padding: 10px;
-  }
-
   .card {
-      width: 90%;
+      width: 100%; 
+      height: auto;
   }
 }
-
-
 
 
 
