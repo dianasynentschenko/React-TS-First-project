@@ -1,6 +1,7 @@
 import Header from "./components/Header.tsx";
 import goalsImg from "./assets/goal.jpg";
 import CardList from "./components/CardList.tsx";
+import ApiCardList from "./components/ApiCardList.tsx";
 
 
 export default function App() {
@@ -12,6 +13,8 @@ export default function App() {
       
 
       <CardList/>
+
+      <ApiCardList/>
 
     </main>
   );
